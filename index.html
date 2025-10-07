@@ -1,0 +1,13 @@
+<!doctype html>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Knife Drop-Off</title>
+<script>
+  const number = "+13609531794";          // <-- your phone number
+  const body   = "Knife drop-off in parts room"; // <-- text message
+  const isiOS  = /iPad|iPhone|iPod/.test(navigator.userAgent);
+  const link   = isiOS ? `sms:${number}&body=${encodeURIComponent(body)}`
+                       : `sms:${number}?body=${encodeURIComponent(body)}`;
+  location.replace(link);
+</script>
+<p>If your SMS app didn’t open, <a id="a">tap here</a>.</p>
+<script>document.getElementById('a').href = link;</script>
